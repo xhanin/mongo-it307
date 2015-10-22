@@ -1,0 +1,16 @@
+title: Find companies 20151022 101448
+given:
+  - time: 2015-10-22T10:14:48.341+02:00
+  - collection: companies
+    data: |
+        { "_id" : { "$oid" : "56289a77d4c688fdccf177d4"} , "name" : "enseirb" , "address" : "test"}
+wts:
+  - when: |
+       GET companies
+       Cookie: RestxSession-mongo-it307={"principal":"admin","sessionKey":"14777c7b-c3e2-41df-ab19-245e8eaeab0a","_expires":"2015-11-21T10:14:48.341+01:00"}; RestxSessionSignature-mongo-it307=dBsflthNkxZUf0B/J6eQJIq/o5k=
+    then: |
+        [ {
+          "name" : "enseirb",
+          "address" : "test",
+          "_id" : "56289a77d4c688fdccf177d4"
+        } ]
